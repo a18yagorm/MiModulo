@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+    	<menuitem id="person_menu"
+              	name="Persona"/>
+    	<menuitem id="person_relative_menu" parent="person_menu" name="Familiar"/>
+	</data>
+</odoo>
+
+<record id="relative_menu_action" model="ir.actions.act_window">
+        	<field name="name">Familiares</field>
+        	<field name="res_model">person.person</field>
+        	<field name="view_type">form</field>
+        	<field name="view_mode">tree,form</field>
+        	</field>
+</record>
+
+<menuitem id="person_menu"-
+			name="Persona"/>
+<menuitem id="person_relative_menu"
+			parent="person_menu"
+			name="Familiar"
+			action="relative_menu_action"/>
+
+
+<record id="relative_search_view" model="ir.ui.view">
+   <field name="name">Busca de familiares</field>
+   <field name="model">person.person</field>
+   <field name="arch" type="xml">
+       <search string="Buscar familiar">
+           <field name="name"/>
+           <field name="age"/>
+           <field name="nationality"/>
+           <filter string="Masculino" name="masculino" domain="[('gender','=','masculino')]"
+                   help="Familiares de género masculino"/>
+           <filter string="Femenino" name="femenino" domain="[('gender','=','female')]"
+                   help="Familiares de género femenino"/>
+           <group expand="1" string="Agrupado por">
+               <filter string="Nacionalidad" name="nationality" context="{'group_by':'nationality'}"/>
+           </group>
+       </search>
+   </field>
+</record>

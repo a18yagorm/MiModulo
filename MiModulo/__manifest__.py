@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
 {
-	'name': 'Clients',
+	'name': 'Personas',
 	'version': '12.0.1.0.0',
-	'summary': 'Guarda Información del cliente',
+	'summary': 'Grava Información de los familiares',
 	'category': 'Tools',
 	'author': 'Yago Ramas',
-	'maintainer': '',
+	'maintainer': 'Yago Ramas',
 	'company': '',
 	'website': '',
 	'depends': ['base'],
 	'data': [
-        'client_views.xml'
+    	'views/relative_view.xml'
 	],
 	'images': [],
 	'license': 'AGPL-3',
