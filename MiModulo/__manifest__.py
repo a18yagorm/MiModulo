@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-	'name': 'Personas',
+	'name': 'Familiares',
 	'version': '12.0.1.0.0',
 	'summary': 'Grava Información de los familiares',
 	'category': 'Tools',
@@ -10,6 +10,7 @@
 	'website': '',
 	'depends': ['base'],
 	'data': [
+		'security/ir.model.access.csv',
     	'views/relative_view.xml'
 	],
 	'images': [],

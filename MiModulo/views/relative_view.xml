@@ -1,43 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
 	<data>
-    	<menuitem id="person_menu"
-              	name="Persona"/>
-    	<menuitem id="person_relative_menu" parent="person_menu" name="Familiar"/>
-	</data>
+    	
+        <record id="relative_menu_action" model="ir.actions.act_window">
+                    <field name="name">Familiares</field>
+                    <field name="res_model">person.person</field>
+                    <field name="view_type">form</field>
+                    <field name="view_mode">tree,form,calendar</field>
+                    <field name="help" type="html">
+                    <p class="oe_view_nocontent_create">Crea el primer familiar
+                    </p>
+                    </field>
+        </record>
+
+        <menuitem id="person_menu"
+                    name="Persona"/>
+        <menuitem id="person_relative_menu"
+                    parent="person_menu"
+                    name="Familiar"
+                    action="relative_menu_action"/>
+    </data>
+
+
+    <!-- Form View-->
+    <record id="relative_view_form" model="ir.ui.view">
+        <field name="name">Relative Form </field>
+        <field name="model">person.person</field>
+        <field name="arch" type="xml">
+            <form delete="true">
+                <header>
+                </header>
+                <group>
+                    <group>
+                        <field name="name"/>
+                        <field name="age"/>
+                    </group>
+                    <group>
+                        <field name='photo' widget="image" class="oe_avatar" />
+                        <field name="person_dob"/>
+                        <field name="person_doe"/>
+                        <field name="gender"/>
+                        <field name="relative_type"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+
+    <!-- Search View-->
+    <record id="relative_search_view" model="ir.ui.view">
+    <field name="name">Busca de familiares</field>
+    <field name="model">person.person</field>
+    <field name="arch" type="xml">
+        <search string="Buscar familiar">
+            <field name="name"/>
+            <field name="age"/>
+            <field name="nationality"/>
+            <filter string="Mayores de edad" name="mayores_edad" domain="[('age','>',17)]"/>
+        </search>
+    </field>
+    </record>
+
+
+    <!-- Calendar View-->
+    <record id="relative_view_calendar" model="ir.ui.view">
+    <field name="name">Calendario Familiar</field>
+    <field name="model">person.person</field>
+    <field name="arch" type="xml">
+        <calendar string="Saidas"
+                    date_start="person_doe"
+                    date_stop="person_doe"
+                    event_open_popup="true"
+                    mode="week"
+                    color="name"
+                    quick_add="False">
+            <field name="name"/>
+            <field name="relative_type"/>
+        </calendar>
+    </field>
+    </record>
+    
 </odoo>
-
-<record id="relative_menu_action" model="ir.actions.act_window">
-        	<field name="name">Familiares</field>
-        	<field name="res_model">person.person</field>
-        	<field name="view_type">form</field>
-        	<field name="view_mode">tree,form</field>
-        	</field>
-</record>
-
-<menuitem id="person_menu"-
-			name="Persona"/>
-<menuitem id="person_relative_menu"
-			parent="person_menu"
-			name="Familiar"
-			action="relative_menu_action"/>
-
-
-<record id="relative_search_view" model="ir.ui.view">
-   <field name="name">Busca de familiares</field>
-   <field name="model">person.person</field>
-   <field name="arch" type="xml">
-       <search string="Buscar familiar">
-           <field name="name"/>
-           <field name="age"/>
-           <field name="nationality"/>
-           <filter string="Masculino" name="masculino" domain="[('gender','=','masculino')]"
-                   help="Familiares de género masculino"/>
-           <filter string="Femenino" name="femenino" domain="[('gender','=','female')]"
-                   help="Familiares de género femenino"/>
-           <group expand="1" string="Agrupado por">
-               <filter string="Nacionalidad" name="nationality" context="{'group_by':'nationality'}"/>
-           </group>
-       </search>
-   </field>
-</record>
