@@ -15,7 +15,8 @@ class Person(models.Model):
 	relative_type = fields.Char(string="Tipo de familiar(Padres,madre,...)", required=True)
 	gender = fields.Selection([('male', 'Masculino'), ('female', 'Femenino')], string='Género')
 	person_dob = fields.Date(string="Fecha de Nacimiento")
-	person_doe = fields.Date(string="Dia de Salida")
+	person_doe = fields.Date(string="Dia de saida")
+	person_job = fields.Char(string="Trabajo", required=False)
 	nationality = fields.Many2one('res.country', string='Nacionalidad')
 
 	@api.depends('person_dob')

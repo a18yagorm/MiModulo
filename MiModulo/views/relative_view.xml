@@ -19,6 +19,10 @@
                     parent="person_menu"
                     name="Familiar"
                     action="relative_menu_action"/>
+        <menuitem id="person_sons_menu"
+                    parent="person_menu"
+                    name="Hijos"
+                    action="relative_menu_action"/>
     </data>
 
 
@@ -36,9 +40,11 @@
                         <field name="age"/>
                     </group>
                     <group>
+                        <field name="nationality"/>
                         <field name='photo' widget="image" class="oe_avatar" />
                         <field name="person_dob"/>
                         <field name="person_doe"/>
+                        <field name="person_job"/>
                         <field name="gender"/>
                         <field name="relative_type"/>
                     </group>
@@ -56,7 +62,7 @@
         <search string="Buscar familiar">
             <field name="name"/>
             <field name="age"/>
-            <field name="nationality"/>
+            <field name="person_job"/>
             <filter string="Mayores de edad" name="mayores_edad" domain="[('age','>',17)]"/>
         </search>
     </field>
