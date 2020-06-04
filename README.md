@@ -1,10 +1,9 @@
-# MiModulo
-Repositorio de modulo de Odoo 12.0
+## Casas e propietarios
 
-## Funcionalidad
-Este módulo permitirá engadir familiriares para poder ver os eventos que fai cada un destes, por exemplo unha saída ao super ou unha cea ou reunión. Esto permitirá unha maior organización e permitirá non sair tanto da casa nestes días.
+O obxectivo deste módulo é ter un control sobre as casas e os seus propietarios.
 
-Conten un campo calculado que é a idade que se calcula a partir da data de nacemento.
+Con este módulo poderás crear casas co país no que se atopan, os metros cuadrados, a dirección e tamén sen propietarios para engadilos no momento en que alguén a compre ou crear unha casa directamente con un propietario.
 
-## Usos del módulo
-Poderanse agregar os familiares a partir dun botón engagir. Abrirase unha ventá e donde se introducirá o nome, a idade, unha foto, o xénero, a data de nacemento e a nacionalidade. Despois de engadir o familiar poderaselle engadir unha fecha a cal representará o día no cal ese familiar ten que saír a facer calquera cousa que sexa fora da casa, asi como ir o supermercado ou a farmacia.
+Tamén se pode crear unha persoa con nome, edade como campo calculado a partir da fecha de nacemento, unha foto, o género e a nacionalidad da persona á cal se lle pode asignar unha casa no momento de creación ou agregarselle despois e tamén mediante un calculo daber cal é a cantidade de casa que ten esa persona en propiedade.
+
+Como parte do menú podes separar as casa de propietarios para unha maior organización e untuición a hora de manexar os datos. Tamén ten un cuadro de busqueda para encontrar o que se quere exactamento se se sabe algún dos datos deste. Ademáis as vistas en lista e en formulario facilitan a lectura de datos.
