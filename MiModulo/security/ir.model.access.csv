@@ -1,3 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_houses_houses,houses.houses,model_houses_house,,1,1,1,1
-access_houses_person,houses.person,model_houses_person,,1,1,1,1
