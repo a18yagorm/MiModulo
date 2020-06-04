@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 {
-	'name': 'Familiares',
+	'name': 'Propietarios',
 	'version': '12.0.1.0.0',
-	'summary': 'Grava Información de los familiares',
+	'summary': 'Controla casas e os seus propietarios',
 	'category': 'Tools',
 	'author': 'Yago Ramas',
 	'maintainer': 'Yago Ramas',
@@ -11,7 +11,8 @@
 	'depends': ['base'],
 	'data': [
 		'security/ir.model.access.csv',
-    	'views/relative_view.xml'
+    	'views/person_view.xml',
+		'views/house_view.xml'
 	],
 	'images': [],
 	'license': 'AGPL-3',

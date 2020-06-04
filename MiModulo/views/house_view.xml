@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="house_house_action" model="ir.actions.act_window">
+                <field name="name">Casas</field>
+                <field name="res_model">houses.house</field>
+                <field name="view_type">form</field>
+                <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="houses_person_action" model="ir.actions.act_window">
+                <field name="name">Personas</field>
+                <field name="res_model">houses.person</field>
+                <field name="view_type">form</field>
+                <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_casas_personas" name="Casas"/>
+    <menuitem id="menu_casas" parent="menu_casas_personas" action="house_menu_action"/>
+    <menuitem id="menu_personas" parent="menu_casas_personas" action="owner_menu_action"/>
+
+
+    <!-- Form View-->
+    <record id="house_view_form" model="ir.ui.view">
+        <field name="name">Formulario de casas </field>
+        <field name="model">houses.house</field>
+        <field name="arch" type="xml">
+            <form delete="true">
+                <group>
+                    <group>
+                        <field name="location"/>
+                        <field name='photo' widget="image" class="oe_avatar" />
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree View -->
+    <record model="ir.ui.view" id="house_view_tree">
+        <field name="name">Relatve Tree View</field>
+        <field name="model">houses.house</field>
+        <field name="arch" type="xml">
+            <tree string="Casas">
+                <field name="location"/>
+            </tree>
+        </field>
+    </record>
+
+</odoo>

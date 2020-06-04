@@ -1,2 +1,4 @@
 # -*- coding: utf-8 -*-
-from. import relative
+
+from . import house
+from . import person
