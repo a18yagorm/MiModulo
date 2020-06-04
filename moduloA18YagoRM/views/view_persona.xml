@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Form View -->
+    <record id="persona_view_form" model="ir.ui.view">
+        <field name="name">Formulario de personas</field>
+        <field name="model">casas.persona</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                    <field name="partner_id"/>
+                    <field name="age"/>
+                    <field name="photo" widget="image" class="oe_avatar"/>
+                    </group>
+                    <group>
+                    <field name="person_ids" widget="one2many" />
+                    <field name="gender"/>
+                    <field name="nacionalidad"/>
+                    <field name="person_dob"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree(list) View -->
+    <record id="persona_view_tree" model="ir.ui.view">
+        <field name="name">Lista de personas</field>
+        <field name="model">casas.persona</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="partner_id"/>
+                <field name="owned_houses"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

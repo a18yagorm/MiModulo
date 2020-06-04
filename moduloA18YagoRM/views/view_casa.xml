@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+  <record id='casas_casa_action' model='ir.actions.act_window'>
+    <field name="name">Casas</field>
+    <field name="res_model">casas.casa</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
+  <record id='casas_persona_action' model='ir.actions.act_window'>
+    <field name="name">Personas</field>
+    <field name="res_model">casas.persona</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
+  <menuitem id="menu_casas_top" name="Propiedades"/>
+  <menuitem id="menu_casas" parent="menu_casas_top" action="casas_casa_action"/>
+  <menuitem id="menu_personas" parent="menu_casas_top" action="casas_persona_action"/>
+
+  <!-- Form View -->
+  <record id="persona_view_form" model="ir.ui.view">
+      <field name="name">Formulario propietarios</field>
+      <field name="model">casas.casa</field>
+      <field name="arch" type="xml">
+          <form>
+              <group>
+                  <field name="pais"/>     
+                  <field name="location"/>
+                  <field name="person_id"/>
+                  <field name="meters"/>          
+              </group>
+          </form>
+      </field>
+  </record>
+
+  <!-- Tree View -->
+  <record id="casa_view_tree" model="ir.ui.view">
+    <field name="name">Lista de casas</field>
+    <field name="model">casas.casa</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="pais"/>
+        <field name="location"/>
+        <field name="person_id"/>
+      </tree>
+    </field>
+  </record>
+
+</odoo>

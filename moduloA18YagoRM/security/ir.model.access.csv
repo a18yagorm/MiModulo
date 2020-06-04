@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_casas_casas,casas.casas,model_casas_casa,,1,1,1,1
+access_casas_persona,casas.persona,model_casas_persona,,1,1,1,1
